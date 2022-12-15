@@ -5,5 +5,6 @@ const listItemsCtrl = require('../../controllers/api/listItems')
 
 router.post('/', listItemsCtrl.create);
 router.get('/', listItemsCtrl.index);
+router.delete('/:id', listItemsCtrl.remove);
 
 module.exports = router

@@ -1,8 +1,8 @@
 import { useState } from "react"
 import ListItem from "../ListItem/ListItem"
 
-export default function BucketList({ listItems, setListItems, addListItem }) {
-    const listTitles = listItems.map((l, idx) => <ListItem listItem={l} key={idx} />)
+export default function BucketList({ listItems, setListItems, addListItem, deleteListItem }) {
+    const listTitles = listItems.map((l, idx) => <ListItem listItem={l} key={idx} setListItems={setListItems} deleteListItem={deleteListItem} />)
     const [listItemInfo, setListItemInfo] = useState({
         listItemTitle: ''
     })
