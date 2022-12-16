@@ -12,3 +12,7 @@ export async function getAllForUser() {
 export async function remove(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
 }
+
+export async function edit(updatedListItem) {
+    return sendRequest(`${BASE_URL}/edit`, 'PUT', updatedListItem)
+}

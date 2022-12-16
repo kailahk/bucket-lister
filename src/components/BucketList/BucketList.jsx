@@ -1,20 +1,37 @@
 import { useState } from "react"
 import ListItem from "../ListItem/ListItem"
 
-export default function BucketList({ listItems, setListItems, addListItem, deleteListItem }) {
-    const listTitles = listItems.map((l, idx) => <ListItem listItem={l} key={idx} setListItems={setListItems} deleteListItem={deleteListItem} />)
+export default function BucketList({
+    listItems,
+    setListItems,
+    addListItem,
+    deleteListItem,
+    editListItem
+}) {
+
     const [listItemInfo, setListItemInfo] = useState({
         listItemTitle: ''
     })
+    const listTitles = listItems.map(
+        (l, idx) => <ListItem
+            key={idx}
+            listItem={l}
+            listItems={listItems}
+            setListItems={setListItems}
+            deleteListItem={deleteListItem}
+            editListItem={editListItem}
+            setListItemInfo={setListItemInfo}
+        />
+    )
 
     function handleChange(evt) {
-        setListItemInfo({listItemTitle: evt.target.value})
+        setListItemInfo({ listItemTitle: evt.target.value })
     }
 
     function handleSubmit(evt) {
         evt.preventDefault();
         addListItem(listItemInfo);
-        setListItemInfo({listItemTitle: ''})
+        setListItemInfo({ listItemTitle: '' })
     }
 
     return (

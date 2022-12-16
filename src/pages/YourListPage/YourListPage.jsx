@@ -23,6 +23,11 @@ export default function YourListPage({user}) {
     setListItems(listItems);
   }
 
+async function editListItem(updatedListItem) {
+    const listItems = await listItemsAPI.edit(updatedListItem);
+    setListItems([...listItems, {updatedListItem}]);
+  }
+
   useEffect(() => {
     async function getListItems() {
       const allListItems = await listItemsAPI.getAllForUser();
@@ -36,7 +41,13 @@ export default function YourListPage({user}) {
     <>
       <h1>Your List</h1>
       <div className="your-list-items">
-        <BucketList listItems={listItems} setListItems={setListItems} addListItem={addListItem} deleteListItem={deleteListItem} />
+        <BucketList 
+          listItems={listItems} 
+          setListItems={setListItems} 
+          addListItem={addListItem} 
+          deleteListItem={deleteListItem}
+          editListItem={editListItem}
+        />
       </div>
       <div className="suggestions">
         <h4>Suggestions</h4>
