@@ -51,11 +51,13 @@ export default function YourListPage({ user }) {
             editListItem={editListItem}
           />
         </div>
-        <div className="suggestions">
+        <div className="suggestions-with-title">
+          <div className="suggestions">
           <h4>Suggestions</h4>
           <button onClick={getSuggestions} className="suggestion-btn">
             <img src="https://i.imgur.com/6ABHHdz.png" alt="Shuffle Suggestions Icon" className="reverse-img-icon" />
           </button>
+          </div>
           <SuggestionList suggestions={suggestions} />
         </div>
       </div>

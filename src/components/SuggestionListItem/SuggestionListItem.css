@@ -1,0 +1,40 @@
+.suggestion-list-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.75vmin;
+    background-color: black;
+    color: rgb(160, 160, 160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0vmin;
+    margin-top: 0vmin;
+    padding: 1vmin 1vmin;
+    width: 40vmin;
+}
+
+img.add-icon {
+    height: 3vmin;
+}
+
+img.add-icon:hover {
+    height: 4vmin;
+    display: flex;
+    padding: 0.5vmin 0;
+}
+
+.add-suggestion-to-list {
+    border: none;
+    height: 3vmin;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggestion-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin-bottom: 1vmin;
+}

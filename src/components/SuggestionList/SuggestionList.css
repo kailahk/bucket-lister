@@ -1,0 +1,10 @@
+.suggestion-list {
+    display: flex;
+    flex-direction: column;
+    width: 30vmin;
+}
+
+h4 {
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 3vmin;
+}

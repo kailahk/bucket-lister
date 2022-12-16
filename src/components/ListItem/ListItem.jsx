@@ -39,7 +39,7 @@ export default function ListItem({ listItem, deleteListItem, editListItem, setLi
                     <button onClick={() => handleSubmit(listItem._id)} type="submit">Submit</button>
                 </form>
             }
-
+            <br />
         </>
     )
 }

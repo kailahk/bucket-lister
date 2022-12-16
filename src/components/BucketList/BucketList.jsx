@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ListItem from "../ListItem/ListItem"
+import "./BucketList.css"
 
 export default function BucketList({
     listItems,
@@ -47,9 +48,9 @@ export default function BucketList({
                 <p>No list items yet!</p>
             }
             <div className="add-one">
-                <label>
-                    Add One
-                </label>
+                <h3>
+                    ADD ONE
+                </h3>
                 <form onSubmit={handleSubmit} className="add-to-list-form">
                     <input
                         type="text"
@@ -59,7 +60,8 @@ export default function BucketList({
                         onChange={handleChange}
                         required
                     />
-                    <button>Add</button>
+                    <br />
+                    <button className="add-list-item-btn">ADD</button>
                 </form>
             </div>
         </>

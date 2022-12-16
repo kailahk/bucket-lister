@@ -1,5 +1,11 @@
-export default function({suggestion}) {
+import "./SuggestionListItem.css"
+export default function ({ suggestion }) {
     return (
-        <p>{suggestion}</p>
+        <div className="suggestion-list-item">
+            <button className="add-suggestion-to-list">
+                <img className="add-icon" src="https://i.imgur.com/nPQdlPV.png" alt="Addition Icon" />
+            </button>
+            <p className="suggestion-list-text">{suggestion}</p>
+        </div>
     )
 }

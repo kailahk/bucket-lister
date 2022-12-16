@@ -1,18 +1,23 @@
-img.edit-icon, img.delete-icon {
-    height: 3vmin;
+img.delete-icon {
+    height: 1.5vmin;
     display: flex;
     padding: 0.5vmin 0;
 }
 
+img.edit-icon {
+    height: 1.5vmin;
+    display: flex;
+    padding: 0.5vmin 0.4vmin 0 0;
+}
+
 img.edit-icon:hover, img.delete-icon:hover {
-    height: 4vmin;
+    height: 2vmin;
     display: flex;
     padding: 0.5vmin 0;
 }
 
 .edit-list-item, .delete-list-item {
     border: none;
-    border-radius: 50%;
     height: 3vmin;
     background-color: transparent;
 }
@@ -22,5 +27,12 @@ img.edit-icon:hover, img.delete-icon:hover {
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    color: white
+    color: white;
+    margin-bottom: 1vmin;
+    width: 40vmin;
+}
+
+.bucket-list-item > p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5vmin;
 }
