@@ -24,9 +24,10 @@ export default function YourListPage({ user }) {
     setListItems(listItems);
   }
 
-  async function editListItem(updatedListItem) {
-    const listItems = await listItemsAPI.edit(updatedListItem);
-    setListItems([...listItems, { updatedListItem }]);
+  async function editListItem(id, updatedListItem) {
+    const item = await listItemsAPI.edit(id, updatedListItem);
+    const updated = listItems.map(i => i._id === item._id ? item : i);
+    setListItems(updated);
   }
 
   useEffect(() => {

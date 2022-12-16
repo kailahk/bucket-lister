@@ -13,6 +13,6 @@ export async function remove(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
 }
 
-export async function edit(updatedListItem) {
-    return sendRequest(`${BASE_URL}/edit`, 'PUT', updatedListItem)
+export async function edit(id, updatedListItem) {
+    return sendRequest(`${BASE_URL}/edit`, 'PUT', {id, updatedListItem})
 }

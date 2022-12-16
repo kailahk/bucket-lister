@@ -11,9 +11,8 @@ export default function ListItem({ listItem, deleteListItem, editListItem, setLi
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        const id = listItems.findById(listItem._id)
-        editListItem({ _id: id, listItemTitle: newListInfo.listItemTitle })
-        // setListItems([...listItems, {id, listItemTitle: newListInfo.listItemTitle}])
+        console.log(listItem._id, newListInfo)
+        editListItem(listItem._id, newListInfo)
     }
 
     return (
@@ -28,7 +27,7 @@ export default function ListItem({ listItem, deleteListItem, editListItem, setLi
                 </button>
             </div>
             {editBtn &&
-                <form>
+                <form onClick={handleSubmit} >
                     <input
                         type="text"
                         value={newListInfo.listItemTitle}
@@ -36,7 +35,7 @@ export default function ListItem({ listItem, deleteListItem, editListItem, setLi
                         onChange={handleChange}
                         required
                     />
-                    <button onClick={() => handleSubmit(listItem._id)} type="submit">Submit</button>
+                    <button type="submit">Submit</button>
                 </form>
             }
             <br />
