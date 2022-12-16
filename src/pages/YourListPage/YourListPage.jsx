@@ -3,8 +3,9 @@ import * as suggestionsAPI from "../../utilities/suggestions-api"
 import { useState, useEffect } from "react";
 import BucketList from "../../components/BucketList/BucketList";
 import * as listItemsAPI from "../../utilities/listItems-api"
+import "./YourListPage.css"
 
-export default function YourListPage({user}) {
+export default function YourListPage({ user }) {
   const [suggestions, setSuggestions] = useState([]);
   const [listItems, setListItems] = useState([]);
 
@@ -23,9 +24,9 @@ export default function YourListPage({user}) {
     setListItems(listItems);
   }
 
-async function editListItem(updatedListItem) {
+  async function editListItem(updatedListItem) {
     const listItems = await listItemsAPI.edit(updatedListItem);
-    setListItems([...listItems, {updatedListItem}]);
+    setListItems([...listItems, { updatedListItem }]);
   }
 
   useEffect(() => {
@@ -38,24 +39,26 @@ async function editListItem(updatedListItem) {
   )
 
   return (
-    <>
-      <h1>Your List</h1>
-      <div className="your-list-items">
-        <BucketList 
-          listItems={listItems} 
-          setListItems={setListItems} 
-          addListItem={addListItem} 
-          deleteListItem={deleteListItem}
-          editListItem={editListItem}
-        />
+    <main className="yourlist-page">
+      <h1>YOUR LIST</h1>
+      <div className="yourlist-page-content">
+        <div className="your-list-items">
+          <BucketList
+            listItems={listItems}
+            setListItems={setListItems}
+            addListItem={addListItem}
+            deleteListItem={deleteListItem}
+            editListItem={editListItem}
+          />
+        </div>
+        <div className="suggestions">
+          <h4>Suggestions</h4>
+          <button onClick={getSuggestions} className="suggestion-btn">
+            <img src="https://i.imgur.com/6ABHHdz.png" alt="Shuffle Suggestions Icon" className="reverse-img-icon" />
+          </button>
+          <SuggestionList suggestions={suggestions} />
+        </div>
       </div>
-      <div className="suggestions">
-        <h4>Suggestions</h4>
-        <button
-          onClick={getSuggestions}
-        >hi</button>
-        <SuggestionList suggestions={suggestions} />
-      </div>
-    </>
+    </main>
   );
 }

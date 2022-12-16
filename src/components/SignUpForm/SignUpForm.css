@@ -1,0 +1,36 @@
+.signup-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vmin;
+    margin: 0 50vmin;
+}
+
+.name-and-email, .password-and-confirm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vmin;
+}
+
+.signup-form-container > form > div > input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2vmin;
+    padding: 1vmin 8vmin 1vmin 1vmin;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.343);
+    border: none;
+}
+
+::placeholder {
+    color: white;
+}
+
+.signup-btn {
+    background-color: black;
+    padding: 1vmin 6vmin;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2vmin;
+    color: white;
+}

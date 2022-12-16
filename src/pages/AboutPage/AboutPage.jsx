@@ -1,9 +1,11 @@
+import "./AboutPage.css"
 
 export default function AboutPage() {
 
     return (
-        <>
-            <h1>About</h1>
-        </>
+        <main className="about-page">
+                <h1>ABOUT</h1>
+                <p>About Bucket Lister Blurb</p>
+        </main>
     );
 }

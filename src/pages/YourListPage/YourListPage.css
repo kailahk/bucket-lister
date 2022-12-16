@@ -1,0 +1,44 @@
+.yourlist-page {
+    background-image: url('https://i.imgur.com/KmgzXs2.png');
+    background-position: cover;
+    background-repeat: no-repeat;
+    height: 100vmin;
+    margin: 0
+}
+
+.yourlist-page-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 10vmin 20vmin 0 20vmin;
+}
+
+img.reverse-img-icon {
+    height: 3vmin;
+    display: flex;
+    padding: 0.5vmin 0;
+}
+
+img.reverse-img-icon:hover {
+    height: 4vmin;
+    display: flex;
+    padding: 0.5vmin 0;
+}
+
+.suggestion-btn {
+    border: none;
+    border-radius: 50%;
+    height: 4vmin;
+    background-color: transparent;
+}
+
+div.suggestions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yourlist-page > h1 {
+    font-size: 8vmin;
+    padding-top: 3vmin;
+}

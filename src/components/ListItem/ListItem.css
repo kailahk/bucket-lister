@@ -1,0 +1,26 @@
+img.edit-icon, img.delete-icon {
+    height: 3vmin;
+    display: flex;
+    padding: 0.5vmin 0;
+}
+
+img.edit-icon:hover, img.delete-icon:hover {
+    height: 4vmin;
+    display: flex;
+    padding: 0.5vmin 0;
+}
+
+.edit-list-item, .delete-list-item {
+    border: none;
+    border-radius: 50%;
+    height: 3vmin;
+    background-color: transparent;
+}
+
+.bucket-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white
+}

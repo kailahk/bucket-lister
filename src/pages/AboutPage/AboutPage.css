@@ -1,0 +1,20 @@
+.about-page {
+    background-image: url('https://i.imgur.com/nZHq5ez.png');
+    background-position: cover;
+    background-repeat: no-repeat;
+    height: 100vmin;
+    margin: 0
+}
+
+.about-page > h1 {
+    font-size: 8vmin;
+    text-align: left;
+    padding: 10vmin 0 0 15vmin;
+}
+
+.about-page > p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    padding: 0 0 0 15vmin;
+
+}

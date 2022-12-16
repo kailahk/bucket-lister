@@ -1,0 +1,36 @@
+.auth-page > h1 {
+    text-decoration: line-through;
+    font-size: 8vmin
+}
+
+p.login-message {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.75vmin;
+}
+
+p.slogan {
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 2vmin;
+}
+
+.auth-page {
+    background-image: url('https://i.imgur.com/RnxQ8Rq.png');
+    background-position: cover;
+    background-repeat: no-repeat;
+    height: 100vmin;
+    margin: 0
+}
+
+main.auth-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-option-btn {
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.343);
+    color: white;
+    border: none;
+    padding: 0.75vmin;
+}
