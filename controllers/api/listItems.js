@@ -26,9 +26,10 @@ async function remove(req, res) {
 
 async function edit(req, res) {
     const updatedItem = await BucketListItem.findOneAndUpdate(
-        {_id: req.body.id},
-        req.body.updatedListItem,
+        {_id: req.params.id},
+        {listItemTitle: req.body.listItemTitle},
         {new: true}
     );
-    res.json(updatedItem)
+    const listItems = await BucketListItem.find({user: req.user._id});
+    res.json(listItems)
 }

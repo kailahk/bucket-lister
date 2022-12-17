@@ -1,0 +1,44 @@
+.details-page {
+    background-image: url('https://i.imgur.com/wDXv112.png');
+    background-position: cover;
+    background-repeat: no-repeat;
+    height: 100vmin;
+    margin: 0
+}
+
+.edit-and-delete-btns {
+    border: none;
+    height: 3vmin;
+}
+
+img.edit-details-icon, img.delete-details-icon {
+    height: 1.5vmin;
+    display: flex;
+}
+
+img.edit-details-icon:hover, img.delete-details-icon:hover {
+    display: flex;
+    height: 2.5vmin;
+}
+
+.delete-details-btn {
+    background-color: black;
+    border: none;
+    margin: 1vmin;
+    padding: 1vmin 0.5vmin;
+}
+
+.edit-details-btn {
+    background-color: black;
+    border: none;
+    margin: 1vmin;
+    padding: 1vmin 1vmin;
+}
+
+.back-btn {
+    border: none;
+    margin: 1vmin;
+    padding: 1vmin 1vmin;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.343);
+}

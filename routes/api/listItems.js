@@ -6,6 +6,6 @@ const listItemsCtrl = require('../../controllers/api/listItems')
 router.post('/', listItemsCtrl.create);
 router.get('/', listItemsCtrl.index);
 router.delete('/:id', listItemsCtrl.remove);
-router.put('/edit', listItemsCtrl.edit);
+router.put('/edit/:id', listItemsCtrl.edit);
 
 module.exports = router

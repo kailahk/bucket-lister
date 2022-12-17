@@ -36,3 +36,15 @@ img.edit-icon:hover, img.delete-icon:hover {
     font-family: 'Open Sans', sans-serif;
     font-size: 2.5vmin;
 }
+
+.check-off {
+    height: 4vmin;
+    width: 4vmin;
+    border: lightgrey;
+    margin-right: 2vmin;
+}
+
+.list-item-with-check-off {
+    display: flex;
+    align-items: center;
+}

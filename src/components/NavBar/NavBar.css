@@ -1,3 +1,30 @@
-nav > p {
-    padding: 0;
+nav {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.343);
+}
+
+.welcome-user {
+    padding: 1vmin 0;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0.5vmin;
+    background-color: transparent;
+}
+
+.nav-el {
+    border-top: 0.2vmin solid white;
+    padding: 1.5vmin
+}
+
+.nav-el-about {
+    padding: 1.5vmin;
+}
+
+.nav-and-welcome-msg {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-right: 6vmin;
 }

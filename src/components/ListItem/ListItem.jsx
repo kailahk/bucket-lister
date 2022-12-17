@@ -1,41 +1,62 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./ListItem.css"
+import * as listItemsAPI from "../../utilities/listItems-api"
 
-export default function ListItem({ listItem, deleteListItem, editListItem, setListItems, listItems }) {
-    const [newListInfo, setNewListInfo] = useState({ listItemTitle: listItem.listItemTitle })
-    const [editBtn, setEditBtn] = useState(false)
+export default function ListItem({
+    listItem,
+    deleteListItem,
+    listItems,
+    setListItems,
+}) {
+    const [editBtn, setEditBtn] = useState(false);
+    const [formData, setFormData] = useState({ listItemTitle: listItem.listItemTitle })
 
-    function handleChange(evt) {
-        setNewListInfo({ listItemTitle: evt.target.value })
+    async function editListItem() {
+        const items = await listItemsAPI.edit(listItem._id, formData);
+        setListItems(items);
     }
 
-    function handleSubmit(evt) {
+    function handleEditChange(evt) {
+        setFormData({ listItemTitle: evt.target.value })
+    }
+
+    function handleEditSubmit(evt) {
         evt.preventDefault();
-        console.log(listItem._id, newListInfo)
-        editListItem(listItem._id, newListInfo)
+        editListItem()
+    }
+
+    function handleCheckOffClick(evt) {
+        listItem.completed = true;
     }
 
     return (
         <>
-            <div className="bucket-list-item">
-                <button className="delete-list-item" onClick={() => deleteListItem(listItem._id)}>
-                    <img className="delete-icon" src="https://i.imgur.com/wosDLot.png" alt="Delete Icon" />
+            <div className="list-item-with-check-off">
+                <button className="check-off" onClick={handleCheckOffClick}>
                 </button>
-                <p>{listItem.listItemTitle}</p>
-                <button className="edit-list-item" onClick={() => setEditBtn(!editBtn)} >
-                    <img className="edit-icon" src="https://i.imgur.com/uRSKxOT.png" alt="Edit Icon" />
-                </button>
+                <div className="bucket-list-item">
+                    <button className="delete-list-item" onClick={() => deleteListItem(listItem._id)}>
+                        <img className="delete-icon" src="https://i.imgur.com/wosDLot.png" alt="Delete Icon" />
+                    </button>
+                    <Link to={`/details/${listItem._id}`}>
+                        <p>{listItem.listItemTitle}</p>
+                    </Link>
+                    <button className="edit-list-item" onClick={() => setEditBtn(!editBtn)} >
+                        <img className="edit-icon" src="https://i.imgur.com/uRSKxOT.png" alt="Edit Icon" />
+                    </button>
+                </div>
             </div>
             {editBtn &&
-                <form onClick={handleSubmit} >
+                <form onClick={handleEditSubmit} >
                     <input
                         type="text"
-                        value={newListInfo.listItemTitle}
+                        value={formData.listItemTitle}
                         name="listItemTitle"
-                        onChange={handleChange}
+                        onChange={handleEditChange}
                         required
                     />
-                    <button type="submit">Submit</button>
+                    <button type="submit" onClick={() => setEditBtn(!editBtn)}>Submit</button>
                 </form>
             }
             <br />

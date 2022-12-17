@@ -9,15 +9,22 @@ export default function NavBar({ user, setUser }) {
     }
 
     return (
-        <nav>
-            <Link to="/about">About</Link>
-            &nbsp; | &nbsp;
-            <Link to="/yourlist">Your List</Link>
-            &nbsp; | &nbsp;
-            <Link to="/done">Done</Link>
-            &nbsp; | &nbsp;
-            <Link to="" onClick={handleLogOut}>Log Out</Link>
-            <p>Welcome, {user.name}!</p>
-        </nav>
+        <div className='nav-and-welcome-msg'>
+            <p className='welcome-user'>Welcome, {(user.name).charAt(0).toUpperCase() + (user.name).slice(1)}!</p>
+            <nav>
+                <div className='nav-el-about'>
+                    <Link to="/">About</Link>
+                </div>
+                <div className='nav-el'>
+                    <Link to="/yourlist">Your List</Link>
+                </div>
+                <div className='nav-el'>
+                    <Link to="/done">Done</Link>
+                </div>
+                <div className='nav-el'>
+                    <Link to="" onClick={handleLogOut}>Log Out</Link>
+                </div>
+            </nav>
+        </div>
     );
 }

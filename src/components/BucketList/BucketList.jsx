@@ -7,12 +7,22 @@ export default function BucketList({
     setListItems,
     addListItem,
     deleteListItem,
-    editListItem
+    editListItem,
+    handleEditChange,
+    handleEditSubmit,
+    editBtn,
+    setEditBtn,
+    newListInfo,
+    setNewListInfo,
+    doneList,
+    setDoneList,
 }) {
 
     const [listItemInfo, setListItemInfo] = useState({
         listItemTitle: ''
     })
+
+    // const notDoneItems = listItems.filter((ndi) => ndi.completed === false)
     const listTitles = listItems.map(
         (l, idx) => <ListItem
             key={idx}
@@ -22,14 +32,22 @@ export default function BucketList({
             deleteListItem={deleteListItem}
             editListItem={editListItem}
             setListItemInfo={setListItemInfo}
+            handleEditChange={handleEditChange}
+            handleEditSubmit={handleEditSubmit}
+            editBtn={editBtn}
+            setEditBtn={setEditBtn}
+            newListInfo={newListInfo}
+            setNewListInfo={setNewListInfo}
+            doneList={doneList}
+            setDoneList={setDoneList}
         />
     )
 
-    function handleChange(evt) {
+    function handleAddChange(evt) {
         setListItemInfo({ listItemTitle: evt.target.value })
     }
 
-    function handleSubmit(evt) {
+    function handleAddSubmit(evt) {
         evt.preventDefault();
         addListItem(listItemInfo);
         setListItemInfo({ listItemTitle: '' })
@@ -51,13 +69,13 @@ export default function BucketList({
                 <h3>
                     ADD ONE
                 </h3>
-                <form onSubmit={handleSubmit} className="add-to-list-form">
+                <form onSubmit={handleAddSubmit} className="add-to-list-form">
                     <input
                         type="text"
                         placeholder="New Bucket List Item"
                         value={listItemInfo.listItemTitle}
                         name="listItemTitle"
-                        onChange={handleChange}
+                        onChange={handleAddChange}
                         required
                     />
                     <br />
