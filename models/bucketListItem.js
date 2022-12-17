@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const bucketListItemSchema = new Schema({
     listItemTitle: {type: String, required: true},
     user: {type: Schema.Types.ObjectId, ref: 'User'},
-    completed: {type: Boolean},
+    completed: {type: String, default: 'false'},
     listItemDate: {type: String, default: 'No date added yet'},
     listItemLocation: {type: String, default: 'No location added yet'},
     listItemNote: {type: String},

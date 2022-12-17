@@ -6,11 +6,12 @@ import * as listItemsAPI from "../../utilities/listItems-api"
 export default function ListItem({
     listItem,
     deleteListItem,
-    listItems,
     setListItems,
 }) {
     const [editBtn, setEditBtn] = useState(false);
-    const [formData, setFormData] = useState({ listItemTitle: listItem.listItemTitle })
+    const [formData, setFormData] = useState({ 
+        listItemTitle: listItem.listItemTitle, completed: listItem.completed 
+    })
 
     async function editListItem() {
         const items = await listItemsAPI.edit(listItem._id, formData);
@@ -18,23 +19,31 @@ export default function ListItem({
     }
 
     function handleEditChange(evt) {
-        setFormData({ listItemTitle: evt.target.value })
+        setFormData({ listItemTitle: evt.target.value, completed: listItem.completed })
     }
 
     function handleEditSubmit(evt) {
         evt.preventDefault();
-        editListItem()
+        editListItem();
     }
 
     function handleCheckOffClick(evt) {
-        listItem.completed = true;
+        setFormData({ completed: 'true' });
+        editListItem();
     }
 
     return (
         <>
             <div className="list-item-with-check-off">
-                <button className="check-off" onClick={handleCheckOffClick}>
-                </button>
+                <form onClick={handleCheckOffClick}>
+                    <input
+                        className="check-off"
+                        type="checkbox"
+                        value={formData.completed}
+                        name="completed"
+                    >
+                    </input>
+                </form>
                 <div className="bucket-list-item">
                     <button className="delete-list-item" onClick={() => deleteListItem(listItem._id)}>
                         <img className="delete-icon" src="https://i.imgur.com/wosDLot.png" alt="Delete Icon" />
@@ -54,7 +63,6 @@ export default function ListItem({
                         value={formData.listItemTitle}
                         name="listItemTitle"
                         onChange={handleEditChange}
-                        required
                     />
                     <button type="submit" onClick={() => setEditBtn(!editBtn)}>Submit</button>
                 </form>

@@ -14,6 +14,5 @@ export async function remove(id) {
 }
 
 export async function edit(id, updatedListItem) {
-    console.log(id, updatedListItem)
     return sendRequest(`${BASE_URL}/edit/${id}`, 'PUT', updatedListItem)
 }

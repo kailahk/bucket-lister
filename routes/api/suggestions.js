@@ -4,6 +4,6 @@ const suggestionsCtrl = require('../../controllers/api/suggestions');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 
-router.get('/', suggestionsCtrl.index);
+router.get('/', ensureLoggedIn, suggestionsCtrl.index);
 
 module.exports = router

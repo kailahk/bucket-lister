@@ -3,28 +3,32 @@
     background-position: cover;
     background-repeat: no-repeat;
     height: 100vmin;
-    margin: 0
+    margin: 0;
 }
 
 .edit-and-delete-btns {
+    margin-top: -5vmin;
     border: none;
     height: 3vmin;
+    float: right;
 }
 
-img.edit-details-icon, img.delete-details-icon {
-    height: 1.5vmin;
+img.edit-details-icon,
+img.delete-details-icon {
+    height: 2vmin;
     display: flex;
 }
 
-img.edit-details-icon:hover, img.delete-details-icon:hover {
+img.edit-details-icon:hover,
+img.delete-details-icon:hover {
     display: flex;
-    height: 2.5vmin;
+    height: 3vmin;
 }
 
 .delete-details-btn {
     background-color: black;
     border: none;
-    margin: 1vmin;
+    margin: 1vmin 8vmin 1vmin 1vmin;
     padding: 1vmin 0.5vmin;
 }
 
@@ -41,4 +45,76 @@ img.edit-details-icon:hover, img.delete-details-icon:hover {
     padding: 1vmin 1vmin;
     color: white;
     background-color: rgba(0, 0, 0, 0.343);
+    float: right;
 }
+
+.what,
+.when,
+.where,
+.who,
+.note,
+.link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30vmin;
+}
+
+.note>input,
+.link>input,
+.where>input,
+.what>input,
+.who>input,
+.when>input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2vmin;
+    padding: 1vmin 8vmin 1vmin 1vmin;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.343);
+    border: none;
+}
+
+.details-page > div > div > h3 {
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 4vmin;
+}
+
+.details-page > div > div > p {
+    font-family: 'Anonymous Pro', monospace;;
+    font-size: 2vmin;
+}
+
+.details-page > div > div > h1 {
+    font-size: 6.5vmin;
+    margin-top: 10vmin;
+}
+
+.notes-and-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note {
+    margin: 0 2vmin 0 40vmin;
+}
+.link {
+    margin: 0 40vmin 0 0;
+}
+
+.note>input::placeholder, 
+.link>input::placeholder,
+.where>input::placeholder,
+.what>input::placeholder,
+.who>input::placeholder,
+.when>input::placeholder
+ {
+    float: left;
+    color: lightgray
+}
+
+/* .container {
+    display: grid;
+    grid-template-columns: repeat(3, 30vmin);
+    grid-template-rows: repeat(4, 30vmin);
+} */

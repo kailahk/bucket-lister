@@ -42,6 +42,7 @@ img.edit-icon:hover, img.delete-icon:hover {
     width: 4vmin;
     border: lightgrey;
     margin-right: 2vmin;
+    background-color: white;
 }
 
 .list-item-with-check-off {

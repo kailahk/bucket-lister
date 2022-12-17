@@ -70,6 +70,7 @@ export default function App() {
                 element={<DetailPage 
                   listItems={listItems} 
                   deleteListItem={deleteListItem}
+                  setListItems={setListItems}
                 />}
               />
             </Routes>
