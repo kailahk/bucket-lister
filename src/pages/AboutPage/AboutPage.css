@@ -9,11 +9,17 @@
 .about-page > h1 {
     font-size: 8vmin;
     text-align: left;
-    padding: 10vmin 0 0 15vmin;
+    padding: 10vmin 0 0 12vmin;
 }
 
 .about-page > p {
     font-family: 'Open Sans', sans-serif;
     text-align: left;
-    padding: 0 0 0 15vmin;
+    padding: 0 0 0 12vmin;
+    margin-top: 0;
 }
+
+.about-blurb {
+    width: 75vmin;
+}
+

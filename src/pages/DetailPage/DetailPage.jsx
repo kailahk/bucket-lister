@@ -83,28 +83,30 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                         }
                     </div>
                 </div>
-                <br />
                 <div className="notes-and-link">
                     <div className="note">
-                        <input
-                            type="text"
-                            value={detailsFormData.listItemNote}
-                            name="listItemNote"
-                            onChange={handleEditDetailsChange}
-                            placeholder='NOTES:'
-                        />
+                        <h4>Notes:</h4><p>{listItem.listItemNote}</p>
+                        {editDetailsBtn &&
+                            <input
+                                type="text"
+                                value={detailsFormData.listItemNote}
+                                name="listItemNote"
+                                onChange={handleEditDetailsChange}
+                            />
+                        }
                     </div>
                     <div className="link">
-                        <input
-                            type="text"
-                            value={detailsFormData.listItemLink}
-                            name="listItemLink"
-                            onChange={handleEditDetailsChange}
-                            placeholder="LINK:"
-                        />
+                        <h4>Link:</h4><p><a href={listItem.listItemLink} target="_blank">{listItem.listItemLink}</a></p>
+                        {editDetailsBtn &&
+                            <input
+                                type="text"
+                                value={detailsFormData.listItemLink}
+                                name="listItemLink"
+                                onChange={handleEditDetailsChange}
+                            />
+                        }
                     </div>
                 </div>
-                <br />
                 {editDetailsBtn && <button type="submit" onClick={() => setEditDetailsBtn(!editDetailsBtn)}>Submit</button>}
                 <div className="edit-and-delete-btns">
                     <button className="edit-details-btn" onClick={() => setEditDetailsBtn(!editDetailsBtn)} >

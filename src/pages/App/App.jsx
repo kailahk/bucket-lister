@@ -40,7 +40,7 @@ export default function App() {
     if (user) getListItems();
   }, [user]
   )
-
+  
   return (
     <main className="App">
       { user ?

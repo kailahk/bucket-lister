@@ -1,6 +1,7 @@
 import SuggestionList from "../../components/SuggestionList/SuggestionList";
 import BucketList from "../../components/BucketList/BucketList";
 import "./YourListPage.css"
+import { useEffect } from "react";
 
 export default function YourListPage({ 
   user, 

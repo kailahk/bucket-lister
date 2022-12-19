@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./ListItem.css"
 import * as listItemsAPI from "../../utilities/listItems-api"
@@ -12,9 +12,13 @@ export default function ListItem({
     const [formTitleData, setFormTitleData] = useState({
         listItemTitle: listItem.listItemTitle
     })
-    const [formCompletedData, setFormCompletedData] = useState({
-        completed: listItem.completed
+    const [completedData, setCompletedData] = useState({
+        completed: false
     })
+
+    // useEffect(function() {
+    //     setCompletedData({completed: listItem.completed});
+    // }, [listItem])
 
     async function editListItem() {
         const items = await listItemsAPI.edit(listItem._id, formTitleData);
@@ -33,8 +37,8 @@ export default function ListItem({
 
     function handleCheckOffClick(evt) {
         const val = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value;
-        setFormCompletedData({
-            ...formCompletedData,
+        setCompletedData({
+            ...completedData,
             [evt.target.name]: val
         });
         editListItem();
@@ -46,8 +50,8 @@ export default function ListItem({
                     <input
                         className="check-off"
                         type="checkbox"
-                        checked={formCompletedData.completed}
                         name="completed"
+                        checked={completedData.completed}
                         onChange={handleCheckOffClick}
                     />
                     <div className="bucket-list-item">

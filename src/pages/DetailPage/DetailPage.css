@@ -7,7 +7,7 @@
 }
 
 .edit-and-delete-btns {
-    margin-top: -5vmin;
+    margin-top: -8vmin;
     border: none;
     height: 3vmin;
     float: right;
@@ -91,7 +91,7 @@ img.delete-details-icon:hover {
 
 .notes-and-link {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -100,6 +100,10 @@ img.delete-details-icon:hover {
 }
 .link {
     margin: 0 40vmin 0 0;
+}
+
+.link > p > a {
+    color: black;
 }
 
 .note>input::placeholder, 
