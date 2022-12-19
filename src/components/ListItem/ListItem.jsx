@@ -7,74 +7,64 @@ export default function ListItem({
     listItem,
     deleteListItem,
     setListItems,
+    listItems
 }) {
     const [editBtn, setEditBtn] = useState(false);
-    const [formTitleData, setFormTitleData] = useState({
-        listItemTitle: listItem.listItemTitle
-    })
-    const [completedData, setCompletedData] = useState({
-        completed: false
-    })
+    const [isCompleted, setIsCompleted] = useState(false);
+    const [title, setTitle] = useState('');
 
-    // useEffect(function() {
-    //     setCompletedData({completed: listItem.completed});
-    // }, [listItem])
+    useEffect(function () {
+        setIsCompleted(listItem.completed);
+        setTitle(listItem.listItemTitle);
+    }, [listItem])
 
-    async function editListItem() {
-        const items = await listItemsAPI.edit(listItem._id, formTitleData);
-        console.log(items);
-        setListItems(items);
-    }
-
-    function handleEditChange(evt) {
-        setFormTitleData({ listItemTitle: evt.target.value })
-    }
-
-    function handleEditSubmit(evt) {
+    async function handleEditSubmit(evt) {
         evt.preventDefault();
-        editListItem();
+        const updatedListItem = await listItemsAPI.edit(listItem._id, { listItemTitle: title });
+        updateListItems(updatedListItem);
+        setEditBtn(false);
     }
 
-    function handleCheckOffClick(evt) {
-        const val = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value;
-        setCompletedData({
-            ...completedData,
-            [evt.target.name]: val
-        });
-        editListItem();
+    async function handleCompletedChange(evt) {
+        const updatedListItem = await listItemsAPI.edit(listItem._id, { completed: evt.target.checked });
+        updateListItems(updatedListItem);
+    }
+
+    function updateListItems(updatedListItem) {
+        const listItemIdx = listItems.findIndex(item => item._id === updatedListItem._id)
+        const itemsCopy = [...listItems]
+        itemsCopy.splice(listItemIdx, 1, updatedListItem)
+        setListItems(itemsCopy);
     }
 
     return (
         <>
-                <div className="list-item-with-check-off">
-                    <input
-                        className="check-off"
-                        type="checkbox"
-                        name="completed"
-                        checked={completedData.completed}
-                        onChange={handleCheckOffClick}
-                    />
-                    <div className="bucket-list-item">
-                        <button className="delete-list-item" onClick={() => deleteListItem(listItem._id)}>
-                            <img className="delete-icon" src="https://i.imgur.com/wosDLot.png" alt="Delete Icon" />
-                        </button>
-                        <Link to={`/details/${listItem._id}`}>
-                            <p>{listItem.listItemTitle}</p>
-                        </Link>
-                        <button className="edit-list-item" onClick={() => setEditBtn(!editBtn)} >
-                            <img className="edit-icon" src="https://i.imgur.com/uRSKxOT.png" alt="Edit Icon" />
-                        </button>
-                    </div>
+            <div className="list-item-with-check-off">
+                <input
+                    className="check-off"
+                    type="checkbox"
+                    checked={isCompleted}
+                    onChange={handleCompletedChange}
+                />
+                <div className="bucket-list-item">
+                    <button className="delete-list-item" onClick={() => deleteListItem(listItem._id)}>
+                        <img className="delete-icon" src="https://i.imgur.com/wosDLot.png" alt="Delete Icon" />
+                    </button>
+                    <Link to={`/details/${listItem._id}`}>
+                        <p>{listItem.listItemTitle}</p>
+                    </Link>
+                    <button className="edit-list-item" onClick={() => setEditBtn(!editBtn)} >
+                        <img className="edit-icon" src="https://i.imgur.com/uRSKxOT.png" alt="Edit Icon" />
+                    </button>
                 </div>
+            </div>
             {editBtn &&
                 <form onClick={handleEditSubmit} >
                     <input
-                        type="text"
-                        value={formTitleData.listItemTitle}
-                        name="listItemTitle"
-                        onChange={handleEditChange}
+                        value={title}
+                        onChange={(evt) => setTitle(evt.target.value)}
                     />
-                    <button type="submit" onClick={() => setEditBtn(!editBtn)}>Submit</button>
+                    <button type="submit">Submit</button>
                 </form>
             }
             <br />
