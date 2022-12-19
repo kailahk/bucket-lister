@@ -22,7 +22,7 @@ export default function BucketList({
         listItemTitle: ''
     })
 
-    // const notDoneItems = listItems.filter((ndi) => ndi.completed === false)
+    // const notDoneItems = listItems.filter((ndi) => ndi.checked === false)
     const listTitles = listItems.map(
         (l, idx) => <ListItem
             key={idx}

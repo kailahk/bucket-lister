@@ -9,17 +9,21 @@ export default function ListItem({
     setListItems,
 }) {
     const [editBtn, setEditBtn] = useState(false);
-    const [formData, setFormData] = useState({ 
-        listItemTitle: listItem.listItemTitle, completed: listItem.completed 
+    const [formTitleData, setFormTitleData] = useState({
+        listItemTitle: listItem.listItemTitle
+    })
+    const [formCompletedData, setFormCompletedData] = useState({
+        completed: listItem.completed
     })
 
     async function editListItem() {
-        const items = await listItemsAPI.edit(listItem._id, formData);
+        const items = await listItemsAPI.edit(listItem._id, formTitleData);
+        console.log(items);
         setListItems(items);
     }
 
     function handleEditChange(evt) {
-        setFormData({ listItemTitle: evt.target.value, completed: listItem.completed })
+        setFormTitleData({ listItemTitle: evt.target.value })
     }
 
     function handleEditSubmit(evt) {
@@ -28,39 +32,41 @@ export default function ListItem({
     }
 
     function handleCheckOffClick(evt) {
-        setFormData({ completed: 'true' });
+        const val = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value;
+        setFormCompletedData({
+            ...formCompletedData,
+            [evt.target.name]: val
+        });
         editListItem();
     }
 
     return (
         <>
-            <div className="list-item-with-check-off">
-                <form onClick={handleCheckOffClick}>
+                <div className="list-item-with-check-off">
                     <input
                         className="check-off"
                         type="checkbox"
-                        value={formData.completed}
+                        checked={formCompletedData.completed}
                         name="completed"
-                    >
-                    </input>
-                </form>
-                <div className="bucket-list-item">
-                    <button className="delete-list-item" onClick={() => deleteListItem(listItem._id)}>
-                        <img className="delete-icon" src="https://i.imgur.com/wosDLot.png" alt="Delete Icon" />
-                    </button>
-                    <Link to={`/details/${listItem._id}`}>
-                        <p>{listItem.listItemTitle}</p>
-                    </Link>
-                    <button className="edit-list-item" onClick={() => setEditBtn(!editBtn)} >
-                        <img className="edit-icon" src="https://i.imgur.com/uRSKxOT.png" alt="Edit Icon" />
-                    </button>
+                        onChange={handleCheckOffClick}
+                    />
+                    <div className="bucket-list-item">
+                        <button className="delete-list-item" onClick={() => deleteListItem(listItem._id)}>
+                            <img className="delete-icon" src="https://i.imgur.com/wosDLot.png" alt="Delete Icon" />
+                        </button>
+                        <Link to={`/details/${listItem._id}`}>
+                            <p>{listItem.listItemTitle}</p>
+                        </Link>
+                        <button className="edit-list-item" onClick={() => setEditBtn(!editBtn)} >
+                            <img className="edit-icon" src="https://i.imgur.com/uRSKxOT.png" alt="Edit Icon" />
+                        </button>
+                    </div>
                 </div>
-            </div>
             {editBtn &&
                 <form onClick={handleEditSubmit} >
                     <input
                         type="text"
-                        value={formData.listItemTitle}
+                        value={formTitleData.listItemTitle}
                         name="listItemTitle"
                         onChange={handleEditChange}
                     />
