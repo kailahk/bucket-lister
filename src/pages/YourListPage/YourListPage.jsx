@@ -22,7 +22,6 @@ export default function YourListPage({
   doneList,
   setDoneList,
 }) {
-  const [showDoneBtn, setShowDoneBtn] = useState(false)
 
   return (
     <main className="yourlist-page">
@@ -46,7 +45,6 @@ export default function YourListPage({
             setNewListInfo={setNewListInfo}
             doneList={doneList}
             setDoneList={setDoneList}
-            showDoneBtn={showDoneBtn}
           />
         </div>
         <div className="suggestions-with-title">
@@ -57,9 +55,6 @@ export default function YourListPage({
           </button>
           </div>
           <SuggestionList suggestions={suggestions} addListItem={addListItem} setSuggestions={setSuggestions} />
-        </div>
-        <div>
-          <button onClick={() => setShowDoneBtn(!showDoneBtn)}>Show off what you've done</button>
         </div>
       </div>
     </main>

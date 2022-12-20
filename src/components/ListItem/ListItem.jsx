@@ -8,7 +8,6 @@ export default function ListItem({
     deleteListItem,
     setListItems,
     listItems,
-    showDoneBtn
 }) {
     const [editBtn, setEditBtn] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
@@ -60,7 +59,7 @@ export default function ListItem({
                 </div>
             </div>
             {editBtn &&
-                <form onClick={handleEditSubmit} >
+                <form onSubmit={handleEditSubmit} >
                     <input
                         value={title}
                         onChange={(evt) => setTitle(evt.target.value)}
