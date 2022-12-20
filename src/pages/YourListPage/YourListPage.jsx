@@ -1,7 +1,7 @@
 import SuggestionList from "../../components/SuggestionList/SuggestionList";
 import BucketList from "../../components/BucketList/BucketList";
 import "./YourListPage.css"
-import { useEffect } from "react";
+import { useState } from "react";
 
 export default function YourListPage({ 
   user, 
@@ -22,7 +22,8 @@ export default function YourListPage({
   doneList,
   setDoneList,
 }) {
-  
+  const [showDoneBtn, setShowDoneBtn] = useState(false)
+
   return (
     <main className="yourlist-page">
       <h1>YOUR LIST</h1>
@@ -45,6 +46,7 @@ export default function YourListPage({
             setNewListInfo={setNewListInfo}
             doneList={doneList}
             setDoneList={setDoneList}
+            showDoneBtn={showDoneBtn}
           />
         </div>
         <div className="suggestions-with-title">
@@ -55,6 +57,9 @@ export default function YourListPage({
           </button>
           </div>
           <SuggestionList suggestions={suggestions} addListItem={addListItem} setSuggestions={setSuggestions} />
+        </div>
+        <div>
+          <button onClick={() => setShowDoneBtn(!showDoneBtn)}>Show off what you've done</button>
         </div>
       </div>
     </main>

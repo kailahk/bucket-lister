@@ -7,7 +7,8 @@ export default function ListItem({
     listItem,
     deleteListItem,
     setListItems,
-    listItems
+    listItems,
+    showDoneBtn
 }) {
     const [editBtn, setEditBtn] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);

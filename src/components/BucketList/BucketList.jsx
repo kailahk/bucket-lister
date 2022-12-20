@@ -16,14 +16,15 @@ export default function BucketList({
     setNewListInfo,
     doneList,
     setDoneList,
+    showDoneBtn
 }) {
 
     const [listItemInfo, setListItemInfo] = useState({
         listItemTitle: ''
     })
 
-    // const notDoneItems = listItems.filter((ndi) => ndi.checked === false)
-    const listTitles = listItems.map(
+    const notDoneItems = listItems.filter((ndi) => ndi.completed === false)
+    const listTitles = notDoneItems.map(
         (l, idx) => <ListItem
             key={idx}
             listItem={l}
@@ -40,6 +41,7 @@ export default function BucketList({
             setNewListInfo={setNewListInfo}
             doneList={doneList}
             setDoneList={setDoneList}
+            showDoneBtn={showDoneBtn}
         />
     )
 
