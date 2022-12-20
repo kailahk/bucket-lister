@@ -6,16 +6,6 @@
     margin: 0 50vmin;
 }
 
-
-.login-form-container > form > div > input {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2vmin;
-    padding: 1vmin 8vmin 1vmin 1vmin;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.343);
-    border: none;
-}
-
 .email-and-password {
     display: flex;
     justify-content: space-between;
@@ -26,8 +16,5 @@
 .login-btn {
     background-color: black;
     padding: 1vmin 6vmin;
-    border: none;
-    font-family: 'Open Sans', sans-serif;
     font-size: 2vmin;
-    color: white;
 }

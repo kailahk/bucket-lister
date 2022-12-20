@@ -22,7 +22,7 @@ img.edit-icon:hover, img.delete-icon:hover {
     background-color: transparent;
 }
 
-.bucket-list-item {
+div.bucket-list-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,12 +40,41 @@ img.edit-icon:hover, img.delete-icon:hover {
 .check-off {
     height: 4vmin;
     width: 4vmin;
-    border: lightgrey;
     margin-right: 2vmin;
-    background-color: white;
+}
+
+.check-off:hover {
+    height: 5vmin;
+    width: 5vmin;
 }
 
 .list-item-with-check-off {
     display: flex;
     align-items: center;
+}
+
+.edit-title-form {
+    background-color:rgba(0, 0, 0, 0.343);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 1vmin;
+    width: 36vmin;
+    padding: 0 2vmin;
+}
+
+.edit-title-form > input {
+    background-color: transparent;
+    width: 40vmin;
+    height: 4.5vmin;
+}
+
+.submit-title-change {
+    background-color: black;
+    font-size: 1.5vmin;
+}
+
+.submit-title-change:hover {
+    font-size: 2vmin;
 }

@@ -72,7 +72,6 @@ export default function BucketList({
                 <form onSubmit={handleAddSubmit} className="add-to-list-form">
                     <input
                         type="text"
-                        placeholder="New Bucket List Item"
                         value={listItemInfo.listItemTitle}
                         name="listItemTitle"
                         onChange={handleAddChange}

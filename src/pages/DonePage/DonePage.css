@@ -1,9 +1,5 @@
 .done-page {
     background-image: url('https://i.imgur.com/lpXSibG.png');
-    background-position: cover;
-    background-repeat: no-repeat;
-    height: 100vmin;
-    margin: 0
 }
 
 .done-items {
@@ -14,8 +10,8 @@
     margin: 10vmin 30vmin 0 30vmin;
 }
 
-.done-page > h1 {
+.done-heading {
     font-size: 8vmin;
     padding-top: 5vmin;
-    margin-left: 26vmin;
+    margin-left: 28vmin;
 }

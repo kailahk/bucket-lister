@@ -4,7 +4,6 @@ import "./YourListPage.css"
 import { useState } from "react";
 
 export default function YourListPage({ 
-  user, 
   listItems, 
   getSuggestions, 
   setSuggestions, 
@@ -49,7 +48,7 @@ export default function YourListPage({
         </div>
         <div className="suggestions-with-title">
           <div className="suggestions">
-          <h4>Suggestions</h4>
+          <h4 className="suggestions-title">Suggestions</h4>
           <button onClick={getSuggestions} className="suggestion-btn">
             <img src="https://i.imgur.com/6ABHHdz.png" alt="Shuffle Suggestions Icon" className="reverse-img-icon" />
           </button>

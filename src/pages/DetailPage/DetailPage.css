@@ -3,12 +3,11 @@
     background-position: cover;
     background-repeat: no-repeat;
     height: 100vmin;
-    margin: 0;
+    margin-top: 6vmin;
 }
 
 .edit-and-delete-btns {
     margin-top: -8vmin;
-    border: none;
     height: 3vmin;
     float: right;
 }
@@ -27,25 +26,14 @@ img.delete-details-icon:hover {
 
 .delete-details-btn {
     background-color: black;
-    border: none;
     margin: 1vmin 8vmin 1vmin 1vmin;
     padding: 1vmin 0.5vmin;
 }
 
 .edit-details-btn {
     background-color: black;
-    border: none;
     margin: 1vmin;
     padding: 1vmin 1vmin;
-}
-
-.back-btn {
-    border: none;
-    margin: 1vmin;
-    padding: 1vmin 1vmin;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.343);
-    float: right;
 }
 
 .what,
@@ -58,20 +46,6 @@ img.delete-details-icon:hover {
     justify-content: space-between;
     align-items: center;
     margin: 0 30vmin;
-}
-
-.note>input,
-.link>input,
-.where>input,
-.what>input,
-.who>input,
-.when>input {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2vmin;
-    padding: 1vmin 8vmin 1vmin 1vmin;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.343);
-    border: none;
 }
 
 .details-page > div > div > h3 {
@@ -105,20 +79,3 @@ img.delete-details-icon:hover {
 .link > p > a {
     color: black;
 }
-
-.note>input::placeholder, 
-.link>input::placeholder,
-.where>input::placeholder,
-.what>input::placeholder,
-.who>input::placeholder,
-.when>input::placeholder
- {
-    float: left;
-    color: lightgray
-}
-
-/* .container {
-    display: grid;
-    grid-template-columns: repeat(3, 30vmin);
-    grid-template-rows: repeat(4, 30vmin);
-} */

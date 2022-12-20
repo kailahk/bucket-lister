@@ -1,19 +1,29 @@
-.done-list-item {
+.done-item-with-checkbox {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    background-color: black;
-    color: white;
+    justify-content: space-between;
     margin-bottom: 1vmin;
-    width: 40vmin;
+    padding: 0 1vmin;
 }
 
-.done-list-item > p {
+.done-item-object {
     font-family: 'Open Sans', sans-serif;
-    font-size: 2.5vmin;
+    font-size: 2vmin;
     text-decoration: line-through;
+    padding: 1vmin;
 }
 
-.checkmark {
-    font-size: 5vmin;
+div.done-list-item {
+    background-color: black;
+    width: 40vmin;
+    height: 6vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.check-off {
+    accent-color: white;
+    /* outline: 0.1vmin solid black; */
+}
+

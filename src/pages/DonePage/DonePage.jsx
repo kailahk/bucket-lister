@@ -7,7 +7,7 @@ export default function DonePage({listItems}) {
 
     return (
         <main className="done-page">
-            <h1>Done</h1>
+            <h1 className="done-heading">DONE</h1>
             <div className="done-items">
                 {doneItemObjects}
             </div>

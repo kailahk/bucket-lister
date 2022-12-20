@@ -1,31 +1,23 @@
-::placeholder {
-    color: white;
-    text-align: center;
-}
-
 .add-list-item-btn {
     background-color: black;
     padding: .75vmin 2.5vmin;
-    border: none;
-    font-family: 'Open Sans', sans-serif;
     font-size: 1.5vmin;
-    color: white;
-    margin-top: 1.5vmin;
+    margin: 1.5vmin 0 0 4.5vmin;
+}
+
+.add-list-item-btn:hover {
+    font-size: 2vmin;
 }
 
 .add-one > h3 {
     font-family: 'Anonymous Pro', monospace;
-    margin-bottom: 2vmin;
+    margin: 0 0 2vmin 4.5vmin;
     font-size: 4vmin;
 }
 
 .add-to-list-form > input {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2vmin;
-    padding: 1vmin 1vmin 1vmin 1vmin;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.343);
-    border: none;
     width: 38vmin;
     height: 6vmin;
+    padding: 1vmin;
+    margin-left: 6vmin;
 }

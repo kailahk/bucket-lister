@@ -46,28 +46,34 @@ export default function ListItem({
                     checked={isCompleted}
                     onChange={handleCompletedChange}
                 />
-                <div className="bucket-list-item">
-                    <button className="delete-list-item" onClick={() => deleteListItem(listItem._id)}>
-                        <img className="delete-icon" src="https://i.imgur.com/wosDLot.png" alt="Delete Icon" />
-                    </button>
-                    <Link to={`/details/${listItem._id}`}>
-                        <p>{listItem.listItemTitle}</p>
-                    </Link>
-                    <button className="edit-list-item" onClick={() => setEditBtn(!editBtn)} >
-                        <img className="edit-icon" src="https://i.imgur.com/uRSKxOT.png" alt="Edit Icon" />
-                    </button>
-                </div>
+                {!editBtn ?
+                    <div className="bucket-list-item">
+                        <div>
+                            <button className="delete-list-item" onClick={() => deleteListItem(listItem._id)}>
+                                <img className="delete-icon" src="https://i.imgur.com/wosDLot.png" alt="Delete Icon" />
+                            </button>
+                        </div>
+                        <div>
+                            <Link to={`/details/${listItem._id}`}>
+                                <p>{listItem.listItemTitle}</p>
+                            </Link>
+                        </div>
+                        <div>
+                            <button className="edit-list-item" onClick={() => setEditBtn(!editBtn)} >
+                                <img className="edit-icon" src="https://i.imgur.com/uRSKxOT.png" alt="Edit Icon" />
+                            </button>
+                        </div>
+                    </div>
+                    :
+                    <form onSubmit={handleEditSubmit} className="edit-title-form">
+                        <input
+                            value={title}
+                            onChange={(evt) => setTitle(evt.target.value)}
+                        />
+                        <button className="submit-title-change" type="submit">Submit</button>
+                    </form>
+                }
             </div>
-            {editBtn &&
-                <form onSubmit={handleEditSubmit} >
-                    <input
-                        value={title}
-                        onChange={(evt) => setTitle(evt.target.value)}
-                    />
-                    <button type="submit">Submit</button>
-                </form>
-            }
-            <br />
         </>
     )
 }
