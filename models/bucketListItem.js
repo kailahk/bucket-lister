@@ -7,8 +7,8 @@ const bucketListItemSchema = new Schema({
     completed: {type: Boolean, default: false},
     listItemDate: {type: String, default: 'No date added yet'},
     listItemLocation: {type: String, default: 'No location added yet'},
-    listItemNote: {type: String},
-    listItemLink: {type: String},
+    listItemNote: {type: String, default: ''},
+    listItemLink: {type: String, default: ''},
     listItemPeople: {type: String, default: 'No people added yet'},
 }, {
     timestamps: true
