@@ -40,7 +40,7 @@ export default function App() {
     if (user) getListItems();
   }, [user]
   )
-  
+
   return (
     <main className="App">
       { user ?
@@ -51,7 +51,6 @@ export default function App() {
               <Route 
                 path="/yourlist" 
                 element={<YourListPage 
-                  user={user} 
                   listItems={listItems} 
                   getSuggestions={getSuggestions} 
                   setSuggestions={setSuggestions} 

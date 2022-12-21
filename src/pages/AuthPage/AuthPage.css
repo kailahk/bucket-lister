@@ -46,4 +46,15 @@ p.error-message {
     height: 20vmin;
     width: 35.57vmin;
     margin-left: 10vmin;
+    filter: drop-shadow(4vmin 2vmin 1vmin #5e5e5e41);
+    animation-name: floating;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(2vmin, 0.5vmin); }
+    100%   { transform: translate(0, -0px); }   
 }

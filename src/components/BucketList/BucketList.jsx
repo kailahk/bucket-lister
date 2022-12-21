@@ -7,9 +7,6 @@ export default function BucketList({
     setListItems,
     addListItem,
     deleteListItem,
-    editListItem,
-    handleEditChange,
-    handleEditSubmit,
     editBtn,
     setEditBtn,
     newListInfo,
@@ -30,10 +27,7 @@ export default function BucketList({
             listItems={listItems}
             setListItems={setListItems}
             deleteListItem={deleteListItem}
-            editListItem={editListItem}
             setListItemInfo={setListItemInfo}
-            handleEditChange={handleEditChange}
-            handleEditSubmit={handleEditSubmit}
             editBtn={editBtn}
             setEditBtn={setEditBtn}
             newListInfo={newListInfo}

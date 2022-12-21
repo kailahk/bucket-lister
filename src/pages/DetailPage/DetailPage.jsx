@@ -119,7 +119,7 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="link">
                     <h4>Link:</h4>
                     {!editDetailsBtn ?
-                        <p><a className="details-link detail-text scroll" href={listItem.listItemLink} target="_blank">{listItem.listItemLink}</a></p>
+                        <p className="detail-text scroll">{listItem.listItemLink}</p>
                         :
                         <textarea
                             type="text"

@@ -1,7 +1,6 @@
 import SuggestionList from "../../components/SuggestionList/SuggestionList";
 import BucketList from "../../components/BucketList/BucketList";
 import "./YourListPage.css"
-import { useState } from "react";
 
 export default function YourListPage({ 
   listItems, 
@@ -9,11 +8,8 @@ export default function YourListPage({
   setSuggestions, 
   addListItem, 
   deleteListItem, 
-  editListItem, 
   setListItems,
   suggestions,
-  handleEditChange,
-  handleEditSubmit,
   editBtn,
   setEditBtn,
   newListInfo,
@@ -32,12 +28,6 @@ export default function YourListPage({
             setListItems={setListItems}
             addListItem={addListItem}
             deleteListItem={deleteListItem}
-            editListItem={editListItem}
-            getSuggestions={getSuggestions} 
-            setSuggestions={setSuggestions} 
-            suggestions={suggestions} 
-            handleEditChange={handleEditChange}
-            handleEditSubmit={handleEditSubmit}
             editBtn={editBtn}
             setEditBtn={setEditBtn}
             newListInfo={newListInfo}
