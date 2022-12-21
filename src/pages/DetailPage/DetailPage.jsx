@@ -46,7 +46,9 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="what">
                     <h1 className="what-title">What:</h1>
                     {!editDetailsBtn ?
-                        <p className="what-detail-text detail-text scroll">{listItem.listItemTitle}</p>
+                    <div className="detail-text">
+                        <p className="what-detail-text scroll">{listItem.listItemTitle}</p>
+                        </div>
                         :
                         <textarea
                             type="text"
@@ -60,7 +62,9 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="where">
                     <h3 className="details-title">Where:</h3>
                     {!editDetailsBtn ?
-                        <p className="detail-text scroll">{listItem.listItemLocation}</p>
+                    <div className="detail-text">
+                        <p className="scroll">{listItem.listItemLocation}</p>
+                        </div>
                         :
                         <textarea
                             type="text"
@@ -75,7 +79,9 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="when">
                     <h3 className="details-title">When:</h3>
                     {!editDetailsBtn ?
-                        <p className="detail-text scroll">{listItem.listItemDate}</p>
+                    <div className="detail-text">
+                        <p className="scroll">{listItem.listItemDate}</p>
+                        </div>
                         :
                         <textarea
                             type="text"
@@ -90,7 +96,9 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="who">
                     <h3 className="details-title">Who:</h3>
                     {!editDetailsBtn ?
-                        <p className="detail-text scroll">{listItem.listItemPeople}</p>
+                    <div className="detail-text">
+                        <p className="scroll">{listItem.listItemPeople}</p>
+                        </div>
                         :
                         <textarea
                             type="text"
@@ -105,7 +113,9 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="note">
                     <h4>Notes:</h4>
                     {!editDetailsBtn ?
-                        <p className="detail-text scroll">{listItem.listItemNote}</p>
+                        <div className="detail-text">
+                            <p className="scroll">{listItem.listItemNote}</p>
+                        </div>
                         :
                         <textarea
                             type="text"
@@ -119,7 +129,9 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="link">
                     <h4>Link:</h4>
                     {!editDetailsBtn ?
-                        <p className="detail-text scroll">{listItem.listItemLink}</p>
+                        <div className="detail-text">
+                            <p className="scroll">{listItem.listItemLink}</p>
+                        </div>
                         :
                         <textarea
                             type="text"
@@ -132,7 +144,7 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 </div>
                 <br />
                 <div>
-                {editDetailsBtn && <button className="submit-details-change" type="submit">SUBMIT</button>}
+                    {editDetailsBtn && <button className="submit-details-change" type="submit">SUBMIT</button>}
                 </div>
             </form>
             <div className="edit-and-delete-btns">

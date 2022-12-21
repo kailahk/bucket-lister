@@ -61,7 +61,7 @@ img.delete-details-icon {
 }
 
 .detail-text {
-    font-family: 'Anonymous Pro', monospace;;
+    font-family: 'Anonymous Pro', monospace;
     font-size: 2vmin;
     width: 35vmin;
     display: flex;
@@ -71,11 +71,6 @@ img.delete-details-icon {
 
 .what-title {
     font-size: 6.5vmin;
-}
-
-.notes-and-link {
-    display: flex;
-    justify-content: flex-start;
 }
 
 .details-link {
@@ -96,7 +91,7 @@ img.delete-details-icon {
 
 .scroll {
     height: 6vmin;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: auto;
 }
 
