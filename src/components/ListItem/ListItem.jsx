@@ -66,11 +66,12 @@ export default function ListItem({
                     </div>
                     :
                     <form onSubmit={handleEditSubmit} className="edit-title-form">
-                        <input
+                        <textarea
+                            className="edit-title-textarea"
                             value={title}
                             onChange={(evt) => setTitle(evt.target.value)}
                         />
-                        <button className="submit-title-change" type="submit">Submit</button>
+                        <button className="submit-title-change" type="submit">SUBMIT</button>
                     </form>
                 }
             </div>

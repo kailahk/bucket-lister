@@ -51,27 +51,33 @@ div.bucket-list-item {
 }
 
 .edit-title-form {
-    background-color:rgba(0, 0, 0, 0.343);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     color: white;
     margin-bottom: 1vmin;
-    width: 36vmin;
-    padding: 0 2vmin;
-}
-
-.edit-title-form > input {
-    background-color: transparent;
-    width: 40vmin;
-    height: 4.5vmin;
+    position: relative;
 }
 
 .submit-title-change {
     background-color: black;
     font-size: 1.5vmin;
+    padding-right: 1vmin;
+    position: absolute;
+    bottom: 3px;
+    right: 4px;
 }
 
 .submit-title-change:hover {
     transform: scale(1.2);
+}
+
+.edit-title-textarea {
+    width: 34vmin;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    resize: none;
+    font-size: 2.25vmin;
+    height: 8vmin;
+    padding: 2vmin 3vmin;
 }
