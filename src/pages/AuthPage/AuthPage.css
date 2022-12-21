@@ -41,3 +41,9 @@ p.error-message {
     font-size: 1.5vmin;
     margin: 0;
 }
+
+.Bucket-Lister-Logo {
+    height: 20vmin;
+    width: 35.57vmin;
+    margin-left: 10vmin;
+}
