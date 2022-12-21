@@ -55,7 +55,7 @@ export default function BucketList({
 
     return (
         <>
-            {listItems.length ?
+            {listTitles.length ?
                 <>
                     <div className="bucket-list-items">
                         {listTitles}
@@ -63,7 +63,7 @@ export default function BucketList({
                     <br />
                 </>
                 :
-                <p>No list items yet!</p>
+                <p className="no-items">No list items yet!</p>
             }
             <div className="add-one">
                 <h3>

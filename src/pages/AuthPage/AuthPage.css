@@ -1,4 +1,4 @@
-.auth-page > h1 {
+.auth-page-title {
     text-decoration: line-through;
     font-size: 8vmin
 }
@@ -15,10 +15,7 @@ p.slogan {
 
 .auth-page {
     background-image: url('https://i.imgur.com/RnxQ8Rq.png');
-    background-position: cover;
-    background-repeat: no-repeat;
-    height: 100vmin;
-    margin: 0
+    height: 105vmin;
 }
 
 main.auth-page {
@@ -33,4 +30,14 @@ main.auth-page {
     color: white;
     border: none;
     padding: 0.75vmin;
+}
+
+.login-option-btn:hover {
+    transform: scale(1.2);
+}
+
+p.error-message {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5vmin;
+    margin: 0;
 }

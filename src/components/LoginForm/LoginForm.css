@@ -18,3 +18,7 @@
     padding: 1vmin 6vmin;
     font-size: 2vmin;
 }
+
+.login-btn:hover {
+    transform: scale(1.2);
+}

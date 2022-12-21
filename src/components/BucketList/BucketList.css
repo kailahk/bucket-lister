@@ -6,18 +6,30 @@
 }
 
 .add-list-item-btn:hover {
-    font-size: 2vmin;
+    transform: scale(1.2);
 }
 
-.add-one > h3 {
+.add-one>h3 {
     font-family: 'Anonymous Pro', monospace;
     margin: 0 0 2vmin 4.5vmin;
     font-size: 4vmin;
 }
 
-.add-to-list-form > input {
+.add-to-list-form>input {
     width: 38vmin;
     height: 6vmin;
     padding: 1vmin;
     margin-left: 6vmin;
+}
+
+.no-items {
+    font-family: 'Open Sans', sans-serif;
+    margin: 3vmin 0 4vmin 4.5vmin;
+
+}
+
+.bucket-list-items {
+    height: 55vmin;
+    overflow-x: hidden;
+    overflow-y: auto;
 }

@@ -22,8 +22,10 @@ div.done-list-item {
     align-items: center;
 }
 
-.check-off {
+.read-only-checkbox {
     accent-color: white;
-    /* outline: 0.1vmin solid black; */
+    height: 4vmin;
+    width: 4vmin;
+    margin-right: 2vmin;
 }
 

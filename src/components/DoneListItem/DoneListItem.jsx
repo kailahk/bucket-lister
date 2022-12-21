@@ -5,7 +5,7 @@ export default function DoneListItem({ doneItemObject }) {
     return (
         <div className="done-item-with-checkbox">
             <input
-                className="check-off"
+                className="read-only-checkbox"
                 type="checkbox"
                 checked={true}
                 readOnly

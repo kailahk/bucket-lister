@@ -14,7 +14,7 @@ a {
   font-family: 'Open Sans', sans-serif;
 }
 
-input {
+input, textarea {
   font-family: 'Open Sans', sans-serif;
   font-size: 2vmin;
   padding: 1vmin 1vmin 1vmin 1vmin;
@@ -38,5 +38,6 @@ main {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  margin: 0
+  margin: 0;
+  padding-bottom: 2vmin;
 }

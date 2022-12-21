@@ -5,9 +5,11 @@
 .done-items {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     margin: 10vmin 30vmin 0 30vmin;
+    height: 70vmin;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .done-heading {

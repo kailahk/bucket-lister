@@ -8,14 +8,15 @@ export default function AuthPage({ setUser }) {
 
     return (
         <main className="auth-page">
-            <h1>&nbsp;Bucket Lister&nbsp;</h1>
-            <p className="slogan">actually do stuff</p>
-            <br />
-            {showAuthPage ? <SignUpForm setUser={setUser} /> : <LoginForm setUser={setUser} />}
-            {showAuthPage ? <p className="login-message">Already have an account?</p> : <p className="login-message">Don't have an account yet?</p>}
-            <button className="login-option-btn" onClick={() => setShowAuthPage(!showAuthPage)}>
-                {showAuthPage ? 'Login' : 'Sign Up'}
-            </button>
+            <div className='auth-page-contents'>
+                <h1 className='auth-page-title'>&nbsp;Bucket Lister&nbsp;</h1>
+                <p className="slogan">actually do stuff</p>
+                {showAuthPage ? <SignUpForm setUser={setUser} /> : <LoginForm setUser={setUser} />}
+                {showAuthPage ? <p className="login-message">Already have an account?</p> : <p className="login-message">Don't have an account yet?</p>}
+                <button className="login-option-btn" onClick={() => setShowAuthPage(!showAuthPage)}>
+                    {showAuthPage ? 'Login' : 'Sign Up'}
+                </button>
+            </div>
         </main>
     );
 }

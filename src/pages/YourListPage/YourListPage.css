@@ -15,8 +15,7 @@ img.reverse-img-icon {
 }
 
 img.reverse-img-icon:hover {
-    height: 4vmin;
-    padding: 0.5vmin 0;
+    transform: scale(1.3);
 }
 
 .suggestion-btn {

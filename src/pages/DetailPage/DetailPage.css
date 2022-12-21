@@ -1,13 +1,17 @@
 .details-page {
     background-image: url('https://i.imgur.com/wDXv112.png');
-    background-position: cover;
-    background-repeat: no-repeat;
-    height: 100vmin;
     margin-top: 6vmin;
 }
 
+.details-page-form {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    width: 120vmin;
+}
+
 .edit-and-delete-btns {
-    margin-top: -8vmin;
+    margin-top: -12vmin;
     height: 3vmin;
     float: right;
 }
@@ -18,10 +22,9 @@ img.delete-details-icon {
     display: flex;
 }
 
-img.edit-details-icon:hover,
-img.delete-details-icon:hover {
-    display: flex;
-    height: 3vmin;
+.edit-details-btn:hover,
+.delete-details-btn:hover {
+    transform: scale(1.2);
 }
 
 .delete-details-btn {
@@ -45,37 +48,67 @@ img.delete-details-icon:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 30vmin;
+    margin: -1vmin 30vmin;
 }
 
-.details-page > div > div > h3 {
+.what {
+    margin-top: 4vmin;
+}
+
+.details-title {
     font-family: 'Anonymous Pro', monospace;
     font-size: 4vmin;
 }
 
-.details-page > div > div > p {
+.detail-text {
     font-family: 'Anonymous Pro', monospace;;
     font-size: 2vmin;
+    width: 35vmin;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.details-page > div > div > h1 {
+.what-title {
     font-size: 6.5vmin;
-    margin-top: 10vmin;
 }
 
 .notes-and-link {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-start;
 }
 
-.note {
-    margin: 0 2vmin 0 40vmin;
-}
-.link {
-    margin: 0 40vmin 0 0;
-}
-
-.link > p > a {
+.details-link {
     color: black;
+}
+
+.submit-details-change {
+    background-color: black;
+    padding: .75vmin 2.5vmin;
+    font-size: 1.5vmin;
+    margin: 1.5vmin 0 0 4.5vmin;
+    width: 12vmin;
+}
+
+.submit-details-change:hover {
+    transform: scale(1.2);
+}
+
+.scroll {
+    height: 6vmin;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.details-input {
+    width: 35vmin;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    resize: none;
+    font-size: 2vmin;
+}
+
+.what-detail-text {
+    font-size: 3vmin;
 }

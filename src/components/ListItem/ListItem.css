@@ -11,9 +11,7 @@ img.edit-icon {
 }
 
 img.edit-icon:hover, img.delete-icon:hover {
-    height: 2vmin;
-    display: flex;
-    padding: 0.5vmin 0;
+    transform: scale(1.5);
 }
 
 .edit-list-item, .delete-list-item {
@@ -44,8 +42,7 @@ div.bucket-list-item {
 }
 
 .check-off:hover {
-    height: 5vmin;
-    width: 5vmin;
+    transform: scale(1.2);
 }
 
 .list-item-with-check-off {
@@ -76,5 +73,5 @@ div.bucket-list-item {
 }
 
 .submit-title-change:hover {
-    font-size: 2vmin;
+    transform: scale(1.2);
 }
