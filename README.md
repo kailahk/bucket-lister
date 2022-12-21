@@ -54,4 +54,6 @@ Click this link to check out our app! --> [Bucket Lister](https://bucket-lister-
 
 
 # Next Steps
-
+Some additional features I would like to implement are...
+* Sort bucket list items on 'Your List Page' and 'Done Page' by most recently added and/or most recently edited
+* Allow users to upload photos to their 'Done Page' list items
