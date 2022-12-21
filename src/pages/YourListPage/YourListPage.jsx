@@ -10,12 +10,6 @@ export default function YourListPage({
   deleteListItem, 
   setListItems,
   suggestions,
-  editBtn,
-  setEditBtn,
-  newListInfo,
-  setNewListInfo,
-  doneList,
-  setDoneList,
 }) {
 
   return (
@@ -28,12 +22,6 @@ export default function YourListPage({
             setListItems={setListItems}
             addListItem={addListItem}
             deleteListItem={deleteListItem}
-            editBtn={editBtn}
-            setEditBtn={setEditBtn}
-            newListInfo={newListInfo}
-            setNewListInfo={setNewListInfo}
-            doneList={doneList}
-            setDoneList={setDoneList}
           />
         </div>
         <div className="suggestions-with-title">

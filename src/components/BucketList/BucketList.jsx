@@ -7,12 +7,6 @@ export default function BucketList({
     setListItems,
     addListItem,
     deleteListItem,
-    editBtn,
-    setEditBtn,
-    newListInfo,
-    setNewListInfo,
-    doneList,
-    setDoneList,
 }) {
 
     const [listItemInfo, setListItemInfo] = useState({
@@ -27,13 +21,6 @@ export default function BucketList({
             listItems={listItems}
             setListItems={setListItems}
             deleteListItem={deleteListItem}
-            setListItemInfo={setListItemInfo}
-            editBtn={editBtn}
-            setEditBtn={setEditBtn}
-            newListInfo={newListInfo}
-            setNewListInfo={setNewListInfo}
-            doneList={doneList}
-            setDoneList={setDoneList}
         />
     )
 

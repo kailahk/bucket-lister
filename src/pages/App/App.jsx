@@ -15,7 +15,6 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [suggestions, setSuggestions] = useState([]);
   const [listItems, setListItems] = useState([]);
-  const [newListInfo, setNewListInfo] = useState({});
 
   async function getSuggestions() {
     const suggestions = await suggestionsAPI.getSuggestions();
@@ -57,9 +56,7 @@ export default function App() {
                   addListItem={addListItem}
                   deleteListItem={deleteListItem}
                   setListItems={setListItems}
-                  suggestions={suggestions} 
-                  newListInfo={newListInfo}
-                  setNewListInfo={setNewListInfo}
+                  suggestions={suggestions}
                 />}
               />
               <Route path="/" element={<AboutPage />} />
