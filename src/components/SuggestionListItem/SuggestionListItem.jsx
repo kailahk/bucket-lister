@@ -1,5 +1,5 @@
 import "./SuggestionListItem.css"
-export default function ({ suggestion, addListItem, suggestions, setSuggestions }) {
+export default function SuggestionListItem({ suggestion, addListItem, suggestions, setSuggestions }) {
 
     function handleClick(evt) {
         addListItem({listItemTitle: suggestion})

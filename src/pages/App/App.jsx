@@ -22,8 +22,11 @@ export default function App() {
   }
 
   async function addListItem(data) {
+    console.log(data);
     const listItem = await listItemsAPI.create(data)
-    setListItems([...listItems, listItem])
+    const updatedList = [...listItems, listItem];
+    updatedList.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+    setListItems(updatedList)
   }
 
   async function deleteListItem(id) {

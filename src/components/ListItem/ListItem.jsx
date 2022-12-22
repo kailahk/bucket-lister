@@ -34,6 +34,7 @@ export default function ListItem({
         const listItemIdx = listItems.findIndex(item => item._id === updatedListItem._id)
         const itemsCopy = [...listItems]
         itemsCopy.splice(listItemIdx, 1, updatedListItem)
+        itemsCopy.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
         setListItems(itemsCopy);
     }
 

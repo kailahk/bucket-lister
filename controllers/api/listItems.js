@@ -14,7 +14,7 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-    const listItems = await BucketListItem.find({user: req.user._id});
+    const listItems = await BucketListItem.find({user: req.user._id}).sort('-updatedAt');
     res.json(listItems);
 }
 

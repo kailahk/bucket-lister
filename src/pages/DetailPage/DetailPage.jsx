@@ -46,8 +46,8 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="what">
                     <h1 className="what-title">What:</h1>
                     {!editDetailsBtn ?
-                    <div className="detail-text">
-                        <p className="what-detail-text scroll">{listItem.listItemTitle}</p>
+                        <div className="detail-text">
+                            <p className="what-detail-text scroll">{listItem.listItemTitle}</p>
                         </div>
                         :
                         <textarea
@@ -62,8 +62,8 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="where">
                     <h3 className="details-title">Where:</h3>
                     {!editDetailsBtn ?
-                    <div className="detail-text">
-                        <p className="scroll">{listItem.listItemLocation}</p>
+                        <div className="detail-text">
+                            <p className="scroll">{listItem.listItemLocation}</p>
                         </div>
                         :
                         <textarea
@@ -79,8 +79,8 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="when">
                     <h3 className="details-title">When:</h3>
                     {!editDetailsBtn ?
-                    <div className="detail-text">
-                        <p className="scroll">{listItem.listItemDate}</p>
+                        <div className="detail-text">
+                            <p className="scroll">{listItem.listItemDate}</p>
                         </div>
                         :
                         <textarea
@@ -96,8 +96,8 @@ export default function DetailPage({ listItems, deleteListItem, setListItems }) 
                 <div className="who">
                     <h3 className="details-title">Who:</h3>
                     {!editDetailsBtn ?
-                    <div className="detail-text">
-                        <p className="scroll">{listItem.listItemPeople}</p>
+                        <div className="detail-text">
+                            <p className="scroll">{listItem.listItemPeople}</p>
                         </div>
                         :
                         <textarea
